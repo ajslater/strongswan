@@ -13,7 +13,7 @@ services:
         volumes:
             - /config
     strongswan:
-        image: sl8r.net/strongswan 
+        image: ajslater/strongswan 
         container_name: strongswan
         ports:
             - "500:500/udp" # IKE
