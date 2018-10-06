@@ -1,5 +1,7 @@
-FROM alpine:latest
-MAINTAINER AJ Slater <aj@slater.net>
+FROM alpine:3.8
+ARG version
+LABEL maintainer="AJ Slater <aj@slater.net>"
+LABEL version=$version
 
 RUN apk add --update iptables ip6tables sudo strongswan; \
     rm -rf /var/cache/apk/*
