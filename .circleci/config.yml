@@ -11,8 +11,10 @@ jobs:
       - checkout
       - run: docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
       - run:
+            VERSION=$(cat VERSION)
             docker build -t $IMAGE --build-arg version=$VERSION .
       - run:
+            VERSION=$(cat VERSION)
             TAG=$VERSION-$(echo $CIRCLE_SHA1 | head -c 7);
             docker tag $IMAGE $IMAGE:$TAG;
             docker push $IMAGE:$TAG;
