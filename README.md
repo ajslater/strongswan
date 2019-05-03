@@ -24,3 +24,5 @@ services:
         volumes_from:
             - strongswan_data
 ```
+## Docker Image
+https://hub.docker.com/r/ajslater/strongswan
