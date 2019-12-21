@@ -1,2 +1,3 @@
-https://pkgs.alpinelinux.org/packages?name=strongswan&arch=x86_64&branch=v3.10
-https://pkgs.alpinelinux.org/package/v3.10/main/x86/strongswan
+https://git.alpinelinux.org/aports/tree/main/strongswan/APKBUILD?h=v3.11.0
+https://pkgs.alpinelinux.org/packages?name=strongswan&arch=x86_64&branch=v3.11
+https://pkgs.alpinelinux.org/package/v3.11/main/x86/strongswan
