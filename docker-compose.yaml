@@ -1,6 +1,7 @@
 version: "2"
 services:
     strongswan:
+        env_file: env
         build: .
         image: ajslater/strongswan
         container_name: strongswan

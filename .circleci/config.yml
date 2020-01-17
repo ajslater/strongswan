@@ -4,20 +4,9 @@ jobs:
     branches:
       only: master
     machine: true
-    environment:
-        IMAGE: ajslater/strongswan
-        VERSION: 5.6.3-r3
     steps:
       - checkout
       - run: docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-      - run:
-            VERSION=$(cat VERSION)
-            docker build -t $IMAGE --build-arg version=$VERSION .
-      - run:
-            VERSION=$(cat VERSION)
-            TAG=$VERSION-$(echo $CIRCLE_SHA1 | head -c 7);
-            docker tag $IMAGE $IMAGE:$TAG;
-            docker push $IMAGE:$TAG;
-      - run:
-            docker tag $IMAGE $IMAGE:latest;
-            docker push $IMAGE:latest
+      - run: ./build.sh
+      - run: ./tag-version.sh
+      - run: ./tag-latest.sh

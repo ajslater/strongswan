@@ -1,10 +1,14 @@
-FROM alpine:3.11
-ARG version
+ARG ALPINE_VERSION
+FROM alpine:$ALPINE_VERSION
+ARG PKG_VERSION
 LABEL maintainer="AJ Slater <aj@slater.net>"
-LABEL version=$version
+LABEL version=${ALPINE_VERSION}_${PKG_VERSION}
 
-RUN apk add --update iptables ip6tables sudo strongswan; \
-    rm -rf /var/cache/apk/*
+RUN apk add --no-cache \
+    iptables \
+    ip6tables \
+    sudo \
+    strongswan=$PKG_VERSION;
 
 COPY 99-strongswan.conf /etc/sysctl.d/
 COPY run.sh /
