@@ -1,4 +1,4 @@
 #!/bin/bash
 set -euo pipefail
 ./build.sh
-docker-compose up strongswan
+docker-compose up
