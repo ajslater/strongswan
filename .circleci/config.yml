@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  strongswan-build:
+  alpine-build:
     machine: true
     steps:
       - checkout
@@ -8,7 +8,7 @@ jobs:
 workflows:
   build:
     jobs:
-      - strongswan-build:
+      - alpine-build:
         pre-steps:
           - run: docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
         post-steps:
