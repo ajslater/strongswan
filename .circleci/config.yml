@@ -1,12 +1,9 @@
-version: 2
+version: 2.1
 jobs:
   build:
-    branches:
-      only: master
     machine: true
     steps:
       - checkout
       - run: docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
       - run: ./build.sh
-      - run: ./tag-version.sh
-      - run: ./tag-latest.sh
+      - run: ./tag-and-push.sh
