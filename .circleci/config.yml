@@ -8,9 +8,8 @@ jobs:
 workflows:
   build:
     jobs:
-      strongswan-build:
+      - strongswan-build:
         pre-steps:
           - run: docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
         post-steps:
-          - run: ./tag-version.sh
-          - run: ./tag-latest.sh
+          - run: ./tag-and-push.sh
