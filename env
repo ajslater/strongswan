@@ -1,4 +1,4 @@
 REPO=ajslater/strongswan
 IMAGE=ajslater/strongswan
 ALPINE_VERSION=3.11.6
-PKG_VERSION=5.8.1-r1
+PKG_VERSION=5.8.1-r2
