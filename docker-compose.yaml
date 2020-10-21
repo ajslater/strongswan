@@ -1,14 +1,14 @@
 version: "3.7"
 services:
-    strongswan:
-        env_file: env
-        build: .
-        image: ajslater/strongswan
-        container_name: strongswan
-        ports:
-            - "500:500/udp" # IKE
-            - "4500:4500/udp" # IKE for NAT & MOBIKE
-        privileged: true
-        cap_add:
-            - NET_ADMIN
-        entrypoint: /run.sh
+  strongswan:
+    env_file: env
+    build: .
+    image: ajslater/strongswan
+    container_name: strongswan
+    ports:
+      - "500:500/udp" # IKE
+      - "4500:4500/udp" # IKE for NAT & MOBIKE
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    entrypoint: /run.sh
